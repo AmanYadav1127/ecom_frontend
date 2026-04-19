@@ -1,0 +1,45 @@
+const Products = () => {
+    const isLoading = true;
+    const errorMeassage="";
+    const products=[
+{
+      productId: 652,
+      productName: "Iphone Xs max",
+      image: "https://placehold.co/600x400",
+      description: "Experience the latest in mobile technology with advanced cameras, powerful processing, and an all-day battery.",
+      quantity: 0,
+      price: 1450.0,
+      discount: 10.0,
+      specialPrice: 1305.0,
+    },
+    {
+      productId: 654,
+      productName: "MacBook Air M2s",
+      image: "https://placehold.co/600x400",
+      description: "Ultra-thin laptop with Apple's M2 chip, providing fast performance in a lightweight, portable design.",
+      quantity: 0,
+      price: 2550.0,
+      discount: 20.0,
+      specialPrice: 2040.0,
+    }
+];
+    return(
+        <div className="lg-px-14 sm-px-4 px-4 py-14 2xl:w-[90%] 2xl:mx-auto">
+          {
+            isLoading ? (
+                <p>Loading...</p>
+            ) : errorMeassage ? (
+                <div></div>
+            ) : (
+                <div className="min-h-[700px]">
+                    <div className="pb-6 pt-14 grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-x-6 gap-y-6">
+                        <p>Products</p>
+                    </div>
+                </div>
+            )
+          }  
+        </div>
+    )
+}
+
+export default Products;
