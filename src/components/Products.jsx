@@ -1,5 +1,8 @@
+import { FaExclamation, FaExclamationTriangle } from "react-icons/fa";
+import ProductCard from "./ProductCard";
+
 const Products = () => {
-    const isLoading = true;
+    const isLoading = false;
     const errorMeassage="";
     const products=[
 {
@@ -29,11 +32,18 @@ const Products = () => {
             isLoading ? (
                 <p>Loading...</p>
             ) : errorMeassage ? (
-                <div></div>
+                <div className="flex justify-center items-center h-[200px]">
+                    <FaExclamationTriangle className="text-slate-800 text-3xl mr-2"/>
+                    <span className="text-slate-800 text-lg font-medium">
+                        {errorMeassage}
+                    </span>
+                </div>
             ) : (
                 <div className="min-h-[700px]">
                     <div className="pb-6 pt-14 grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-x-6 gap-y-6">
-                        <p>Products</p>
+                        {
+                        products && products.map((item,i) => <ProductCard key={i} {...item}/>)    
+                        }
                     </div>
                 </div>
             )
