@@ -4,6 +4,8 @@ export const fetchProducts = () => async (dispatch) => {
   try {
     const { data } = await api.get(`/public/products`);
 
+    console.log("DATA:", data);
+
     dispatch({
       type: "FETCH_PRODUCTS",
       payload: data.content,

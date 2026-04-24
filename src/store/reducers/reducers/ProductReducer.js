@@ -1,7 +1,8 @@
+
 const initialState = {
     products: null,
     categories: null,
-    pagination:[],
+    pagination:{},
 };
 
 export const ProductReducer = (state = initialState, action) => {
